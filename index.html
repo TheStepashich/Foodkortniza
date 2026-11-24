@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FF8A3D">
+  <meta name="description" content="Фудкортница — бесплатное приложение для Android: любимые магазины еды в одной панели внизу экрана. Один тап — и вы в меню. Без адресной строки и регистрации.">
+  <title>Фудкортница — один тап до еды</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Фудкортница — наверх">
+        <img src="assets/logo.svg" alt="" width="42" height="42">
+        <span>Фудкортница</span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#features">Что умеет</a>
+        <a href="#how">Как пользоваться</a>
+        <a href="#stores">Магазины</a>
+        <a href="#faq">Вопросы</a>
+      </nav>
+      <a class="btn btn-small" href="downloads/foodkortniza.apk" download>Скачать</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot"></span> Бесплатно для Android</p>
+          <h1>Голодный?<br>Один тап — и вы <span class="gradient-text">в меню</span></h1>
+          <p class="lead">Фудкортница держит любимые места доставки прямо внизу экрана. Нажали на иконку — сразу меню, корзина и ваш вход. Никаких адресов, поиска и лишних настроек.</p>
+          <div class="chips" aria-label="Коротко о приложении">
+            <span>🍔 Магазины под рукой</span>
+            <span>⚡ Переключается сразу</span>
+            <span>🚫 Без рекламы и регистрации</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="downloads/foodkortniza.apk" download>
+              <span aria-hidden="true">⬇</span> Скачать на Android
+            </a>
+            <a class="btn btn-ghost" href="#how">Как это работает</a>
+          </div>
+          <p class="hero-note">Бесплатно · APK 828 КБ · Android 9 и новее</p>
+        </div>
+
+        <!-- Интерактивный макет приложения -->
+        <div class="hero-demo">
+          <div class="phone" id="demo">
+            <div class="phone-bar" aria-hidden="true">
+              <span>9:41</span><span class="phone-icons">●●● ▰</span>
+            </div>
+            <div class="phone-screen">
+              <div class="demo-page" id="demoPage" style="--demo-accent:#D62300">
+                <div class="demo-store-head">
+                  <span class="demo-store-emoji" id="demoEmoji">🍔</span>
+                  <span class="demo-store-text">
+                    <strong id="demoName">Бургер Кинг</strong>
+                    <small id="demoHost">burgerkingrus.ru</small>
+                  </span>
+                  <span class="demo-lock" aria-hidden="true">🔒</span>
+                </div>
+                <div class="demo-banner">
+                  <span class="demo-banner-kicker">МЕНЮ СЕГОДНЯ</span>
+                  <strong id="demoDish">Вкусно — и точка</strong>
+                  <span>Оформите заказ прямо на сайте магазина</span>
+                  <span class="demo-cta-pill">Заказать →</span>
+                </div>
+                <div class="demo-tiles" aria-hidden="true">
+                  <div><span>🍔</span><small>Бургеры</small></div>
+                  <div><span>🍟</span><small>Фри</small></div>
+                  <div><span>🥤</span><small>Напитки</small></div>
+                </div>
+                <div class="demo-rows" aria-hidden="true">
+                  <div><span class="demo-thumb">🍔</span><span><b>Хит недели</b><small>От 399 ₽</small></span></div>
+                  <div><span class="demo-thumb">🌯</span><span><b>Комбо обед</b><small>От 549 ₽</small></span></div>
+                </div>
+              </div>
+
+              <div class="demo-catalog" id="demoCatalog" hidden>
+                <div class="demo-catalog-head">
+                  <strong>Магазины</strong>
+                  <button type="button" id="demoCatalogClose" aria-label="Закрыть список">✕</button>
+                </div>
+                <p class="demo-catalog-hint">Выберите — кнопка появится на панели</p>
+                <div class="demo-catalog-list">
+                  <button type="button" class="demo-catalog-item" data-name="Бургер Кинг" data-host="burgerkingrus.ru" data-emoji="🍔" data-color="#D62300" data-dish="Вкусно — и точка"><span>🍔</span><b>Бургер Кинг</b><small>Фастфуд</small></button>
+                  <button type="button" class="demo-catalog-item" data-name="Додо Пицца" data-host="dodopizza.ru" data-emoji="🍕" data-color="#F36B21" data-dish="Пицца за 25 минут"><span>🍕</span><b>Додо Пицца</b><small>Пицца</small></button>
+                  <button type="button" class="demo-catalog-item" data-name="Грильница" data-host="grilnica.ru" data-emoji="🔥" data-color="#E65100" data-dish="Шаурма на углях"><span>🔥</span><b>Грильница</b><small>Фастфуд</small></button>
+                  <button type="button" class="demo-catalog-item" data-name="Суши Мастер" data-host="sushi-master.ru" data-emoji="🍣" data-color="#2E7D32" data-dish="Роллы и суши"><span>🍣</span><b>Суши Мастер</b><small>Роллы</small></button>
+                </div>
+                <div class="demo-custom-link">＋ Своя ссылка</div>
+              </div>
+
+              <nav class="demo-bar" id="demoBar" aria-label="Вкладки демо-приложения">
+                <button type="button" class="demo-tab is-active" data-name="Бургер Кинг" data-host="burgerkingrus.ru" data-emoji="🍔" data-color="#D62300" data-dish="Вкусно — и точка"><span>🍔</span><small>Бургер Кинг</small></button>
+                <button type="button" class="demo-tab" data-name="Додо Пицца" data-host="dodopizza.ru" data-emoji="🍕" data-color="#F36B21" data-dish="Пицца за 25 минут"><span>🍕</span><small>Додо Пицца</small></button>
+                <button type="button" class="demo-tab" data-name="Грильница" data-host="grilnica.ru" data-emoji="🔥" data-color="#E65100" data-dish="Шаурма на углях"><span>🔥</span><small>Грильница</small></button>
+                <button type="button" class="demo-tab" data-name="Гриль №1" data-host="grill1.org" data-emoji="🍗" data-color="#C62828" data-dish="Доставка и самовывоз"><span>🍗</span><small>Гриль №1</small></button>
+                <button type="button" class="demo-add" id="demoAdd" aria-label="Добавить магазин">+</button>
+              </nav>
+            </div>
+          </div>
+          <p class="demo-caption">Потрогайте макет: вкладки переключаются, «+» добавляет магазины</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Зачем это</p>
+          <h2>Меньше возни — быстрее поесть</h2>
+          <p class="section-sub">Никаких адресных строк и вкладок-пустышек. Только кнопки с любимыми магазинами и одна кнопка «+», если захочется чего-то нового.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card reveal"><span class="feature-icon">🍔</span><h3>Любимые места внизу экрана</h3><p>Кнопки с иконками и названиями. Сколько нужно — столько и добавьте. Панель просто прокрутится.</p></article>
+          <article class="feature-card reveal"><span class="feature-icon">⚡</span><h3>Переключается одним касанием</h3><p>Страница не перезагружается и не дёргается. Ушли в другой магазин — вернулись, а всё осталось на месте.</p></article>
+          <article class="feature-card reveal"><span class="feature-icon">＋</span><h3>Добавьте любой магазин</h3><p>«+» открывает список популярных мест. Не нашли своё — просто вставьте ссылку на сайт.</p></article>
+          <article class="feature-card reveal"><span class="feature-icon">🛒</span><h3>Корзина и вход не теряются</h3><p>Переключайтесь между магазинами сколько угодно. Всё, что вы начали, ждёт вас на том же месте.</p></article>
+          <article class="feature-card reveal"><span class="feature-icon">🧹</span><h3>Закрыли — значит убрали</h3><p>Два раза спрашиваем, вы уверены, и чистим данные этого сайта. Кнопку всегда можно добавить заново.</p></article>
+          <article class="feature-card reveal"><span class="feature-icon">🔐</span><h3>Пароли и карты — не у нас</h3><p>Входите и оплачивайте на сайте магазина, как обычно. Приложение не видит ни пароли, ни данные карт.</p></article>
+          <article class="feature-card reveal"><span class="feature-icon">🌗</span><h3>Удобно днём и ночью</h3><p>Тема подстраивается под телефон. Текст читается, кнопки не прячутся за вырезом экрана.</p></article>
+          <article class="feature-card reveal"><span class="feature-icon">↔️</span><h3>Порядок — как вам удобно</h3><p>Перетаскивайте кнопки пальцем. Долгое нажатие — чтобы закрыть магазин.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section class="section section-tint" id="how">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Это просто</p>
+          <h2>Три шага до еды</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal"><span class="step-num">01</span><h3>Скачайте</h3><p>Файл весит меньше мегабайта. Откройте его, разрешите установку — и приложение готово к работе.</p></li>
+          <li class="step reveal"><span class="step-num">02</span><h3>Выберите магазины</h3><p>Популярные места уже на панели. Кнопка «+» добавит ещё или вашу собственную ссылку.</p></li>
+          <li class="step reveal"><span class="step-num">03</span><h3>Нажмите и ешьте</h3><p>Иконка внизу открывает меню. Хочется другого — тапните другую иконку, всё без перезагрузки.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- STORES -->
+    <section class="section" id="stores">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Уже внутри</p>
+          <h2>Популярные места</h2>
+          <p class="section-sub">Бургеры, пицца, шаурма, роллы — всё в одном приложении. Список пополняется сам, ничего обновлять вручную не надо.</p>
+        </div>
+        <div class="store-grid">
+          <article class="store-card reveal" style="--store:#D62300"><span class="store-emoji">🍔</span><div><h3>Бургер Кинг</h3><p>Бургеры, фастфуд</p><small>burgerkingrus.ru</small></div></article>
+          <article class="store-card reveal" style="--store:#F36B21"><span class="store-emoji">🍕</span><div><h3>Додо Пицца</h3><p>Пицца, доставка</p><small>dodopizza.ru</small></div></article>
+          <article class="store-card reveal" style="--store:#E65100"><span class="store-emoji">🔥</span><div><h3>Грильница</h3><p>Шаурма, гриль</p><small>grilnica.ru</small></div></article>
+          <article class="store-card reveal" style="--store:#C62828"><span class="store-emoji">🍗</span><div><h3>Гриль №1</h3><p>Доставка, самовывоз</p><small>grill1.org</small></div></article>
+          <article class="store-card reveal" style="--store:#0B5EA7"><span class="store-emoji">🍕</span><div><h3>Папа Джонс</h3><p>Пицца</p><small>papajohns.ru</small></div></article>
+          <article class="store-card reveal" style="--store:#2E7D32"><span class="store-emoji">🍣</span><div><h3>Суши Мастер</h3><p>Роллы, суши</p><small>sushi-master.ru</small></div></article>
+        </div>
+        <p class="store-note reveal">Не нашли своё любимое место? Нажмите «+» → «Своя ссылка» и добавьте любой сайт доставки.</p>
+      </div>
+    </section>
+
+    <!-- PRIVACY BANNER -->
+    <section class="privacy">
+      <div class="container privacy-inner reveal">
+        <div class="privacy-mark" aria-hidden="true">🔒</div>
+        <div>
+          <h2>Пароли и карты остаются там, где они должны быть</h2>
+          <p>Фудкортница просто открывает сайт магазина. Все входы, корзины и оплата происходят на нём, как если бы вы открыли сайт в обычном браузере. Мы не сохраняем пароли, не видим данные карт и ничего не отправляем куда-то ещё.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container faq-wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Вопросы</p>
+          <h2>Что чаще всего спрашивают</h2>
+        </div>
+        <div class="faq-list">
+          <details class="reveal"><summary>Это бесплатно?</summary><p>Да. Без подписок, рекламы и регистрации. Просто скачайте и пользуйтесь.</p></details>
+          <details class="reveal"><summary>Работает на iPhone?</summary><p>Пока нет — приложение только для Android 9 и новее.</p></details>
+          <details class="reveal"><summary>Где вводить пароль и оплачивать заказ?</summary><p>На сайте магазина, как вы привыкли. Фудкортница только открывает этот сайт и показывает его удобно — одной кнопкой внизу.</p></details>
+          <details class="reveal"><summary>А если сайт просит геопозицию?</summary><p>Например, Burger King иногда спрашивает, где вы находитесь, чтобы показать ближайшие точки. Приложение сначала спросит вас, а потом — разрешение самого телефона. Координаты уйдут только этому сайту и нигде не сохраняются.</p></details>
+          <details class="reveal"><summary>Можно добавить свой магазин?</summary><p>Конечно. Нажмите «+» → «Своя ссылка» и вставьте адрес сайта. Подойдёт любой сайт, который открывается по https://.</p></details>
+          <details class="reveal"><summary>Сколько магазинов можно добавить?</summary><p>Сколько захотите. Кнопки остаются на панели, а при большом количестве её можно прокрутить. Приложение само следит, чтобы телефон не тормозил.</p></details>
+          <details class="reveal"><summary>Что происходит, если закрыть магазин?</summary><p>Кнопка исчезает, данные этого сайта удаляются. Вернуть магазин можно в любой момент через «+».</p></details>
+          <details class="reveal"><summary>Почему нужно скачивать APK?</summary><p>Сейчас это тестовая сборка, которую мы распространяем сами. Скачайте файл и разрешите установку из неизвестных источников — это стандартный способ установки APK.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section class="download" id="download">
+      <div class="container download-inner reveal">
+        <img src="assets/logo.svg" alt="Логотип «Картошка фри»" class="download-logo" width="132" height="132">
+        <div>
+          <p class="eyebrow eyebrow-light">Готово к установке</p>
+          <h2>Установите — и обедайте в один тап</h2>
+          <p>Скачайте файл, откройте его и разрешите установку. Через минуту любимые магазины уже будут ждать вас на нижней панели.</p>
+          <div class="download-actions">
+            <a class="btn btn-light" href="downloads/foodkortniza.apk" download>⬇ Скачать приложение</a>
+            <a class="btn btn-outline-light" href="#top">Наверх ↑</a>
+          </div>
+          <p class="download-note">Бесплатно · APK 828 КБ · Android 9 и новее · без рекламы</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#top"><img src="assets/logo.svg" alt="" width="36" height="36"><span>Фудкортница</span></a>
+      <p>Чтобы поесть было проще.</p>
+      <nav aria-label="Ссылки в подвале">
+        <a href="#features">Что умеет</a>
+        <a href="#stores">Магазины</a>
+        <a href="downloads/foodkortniza.apk" download>Скачать</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
