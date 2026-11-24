@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Фон для лаунчеров без адаптивных иконок: скруглённый квадрат. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path android:pathData="M0,26 Q0,0 26,0 L82,0 Q108,0 108,26 L108,82 Q108,108 82,108 L26,108 Q0,108 0,82 Z">
+        <gradient
+            android:angle="315"
+            android:endColor="#EF5123"
+            android:startColor="#FFB347" />
+    </path>
+</vector>

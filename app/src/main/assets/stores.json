@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 4,
+  "app": "Фудкортница",
+  "note": "Масштабируемый каталог магазинов для кнопки «+». Четыре магазина открываются по умолчанию, остальные добавляются из каталога или через «Свою ссылку».",
+  "defaultIds": ["burgerking", "dodopizza", "grilnica", "grill1"],
+  "categories": [
+    { "id": "fastfood", "title": "Фастфуд", "emoji": "🍔" },
+    { "id": "pizza", "title": "Пицца", "emoji": "🍕" },
+    { "id": "sushi", "title": "Роллы и суши", "emoji": "🍣" }
+  ],
+  "stores": [
+    {
+      "id": "burgerking",
+      "title": "Burger King",
+      "entryUrl": "https://burgerkingrus.ru/",
+      "allowedHosts": ["burgerkingrus.ru", "*.burgerkingrus.ru"],
+      "categoryId": "fastfood",
+      "searchKeywords": ["бургер кинг", "burger king", "bk", "бургеры"],
+      "priority": 10,
+      "enabled": true,
+      "emoji": "🍔",
+      "color": "#D62300",
+      "note": "Проверено 24.11.2026: меню, «Заказать», «Войти». Не burgerking.ru и не bk.ru"
+    },
+    {
+      "id": "dodopizza",
+      "title": "Додо Пицца",
+      "entryUrl": "https://dodopizza.ru/",
+      "allowedHosts": ["dodopizza.ru", "*.dodopizza.ru"],
+      "categoryId": "pizza",
+      "searchKeywords": ["додо", "dodo", "пицца"],
+      "priority": 20,
+      "enabled": true,
+      "emoji": "🍕",
+      "color": "#F36B21",
+      "note": "Редирект на город (/barnaul), корзина и оформление на сайте"
+    },
+    {
+      "id": "grilnica",
+      "title": "Грильница",
+      "entryUrl": "https://grilnica.ru/",
+      "allowedHosts": ["grilnica.ru", "*.grilnica.ru"],
+      "categoryId": "fastfood",
+      "searchKeywords": ["грильница", "grilnica", "шаурма"],
+      "priority": 30,
+      "enabled": true,
+      "emoji": "🔥",
+      "color": "#E65100",
+      "note": "Редирект на город (*.grilnica.ru), меню и корзина. Не grilnitsa.ru"
+    },
+    {
+      "id": "grill1",
+      "title": "Гриль №1",
+      "entryUrl": "https://grill1.org/",
+      "allowedHosts": ["grill1.org", "*.grill1.org"],
+      "categoryId": "fastfood",
+      "searchKeywords": ["гриль №1", "гриль номер один", "grill1"],
+      "priority": 40,
+      "enabled": true,
+      "emoji": "🍗",
+      "color": "#C62828",
+      "note": "Редирект на город (/brn), корзина, доставка и самовывоз"
+    },
+    {
+      "id": "papajohns",
+      "title": "Папа Джонс",
+      "entryUrl": "https://papajohns.ru/",
+      "allowedHosts": ["papajohns.ru", "*.papajohns.ru"],
+      "categoryId": "pizza",
+      "searchKeywords": ["папа джонс", "papa johns", "пицца"],
+      "priority": 50,
+      "enabled": true,
+      "emoji": "🍕",
+      "color": "#0B5EA7",
+      "note": "Проверено 24.11.2026: редирект на город (/barnaul), 129 кнопок «В корзину»"
+    },
+    {
+      "id": "sushimaster",
+      "title": "Суши Мастер",
+      "entryUrl": "https://sushi-master.ru/",
+      "allowedHosts": ["sushi-master.ru", "*.sushi-master.ru"],
+      "categoryId": "sushi",
+      "searchKeywords": ["суши мастер", "sushi master", "роллы", "суши"],
+      "priority": 60,
+      "enabled": true,
+      "emoji": "🍣",
+      "color": "#2E7D32",
+      "note": "Проверено 24.11.2026: редирект на город (barnaul.sushi-master.ru), корзина"
+    }
+  ],
+  "rules": {
+    "platform": "android",
+    "allowedSchemes": ["https"],
+    "allowCustomUrl": true,
+    "customUrlRequiresDomainConfirmation": true,
+    "maxActiveTabs": 4,
+    "showAddressBar": false,
+    "isolateStoragePerTab": true,
+    "oneProcessPerTab": true,
+    "restoreLastUrlOnLaunch": true,
+    "closeRequiresDoubleConfirmation": true,
+    "closeDeletesTabData": true,
+    "incognito": false
+  }
+}

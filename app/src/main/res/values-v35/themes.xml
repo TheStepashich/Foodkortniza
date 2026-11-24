@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android 15+ принудительно включает edge-to-edge; приложению нужны обычные отступы системы. -->
+    <style name="Theme.Foodkomfort" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand</item>
+        <item name="colorAccent">@color/brand</item>
+        <item name="android:colorBackground">@color/bar_bg</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:editTextStyle">@style/Widget.Foodkomfort.EditText</item>
+        <item name="android:windowAnimationStyle">@style/NoActivityAnimations</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+    </style>
+</resources>

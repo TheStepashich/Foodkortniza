@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bar_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/catalog_title"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:hint="Поиск по каталогу"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:singleLine="true"
+        android:background="@drawable/bg_input"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/text_hint" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/categoryContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp" />
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/storesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp" />
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/bar_divider" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="10dp"
+        android:text="Своя ссылка"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/customTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:hint="Название"
+        android:inputType="text"
+        android:singleLine="true"
+        android:background="@drawable/bg_input"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/text_hint" />
+
+    <EditText
+        android:id="@+id/customUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:hint="https://example.com"
+        android:inputType="textUri"
+        android:singleLine="true"
+        android:background="@drawable/bg_input"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/text_hint" />
+
+    <Button
+        android:id="@+id/addCustom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:text="Добавить свою ссылку" />
+
+    <net.potatom.foodkortniza.ui.BottomBarView
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp" />
+</LinearLayout>

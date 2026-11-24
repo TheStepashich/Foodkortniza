@@ -1,0 +1,27 @@
+# Gradle / Android build outputs
+.gradle/
+.kotlin/
+build/
+app/build/
+*.apk
+!site/downloads/foodkortniza.apk
+!downloads/foodkortniza.apk
+
+# Local environment
+local.properties
+.idea/
+*.iml
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Keystores and signing secrets
+*.jks
+*.keystore
+keystore.properties
+
+# Logs and temp files
+*.log
+*.tmp
+*~

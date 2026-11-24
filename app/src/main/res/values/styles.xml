@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Глушим и анимации Activity, и анимации переключения task. -->
+    <style name="NoWindowAnimations">
+        <item name="android:windowAnimationStyle">@style/NoActivityAnimations</item>
+    </style>
+
+    <style name="NoActivityAnimations">
+        <item name="android:activityOpenEnterAnimation">@anim/no_anim</item>
+        <item name="android:activityOpenExitAnimation">@anim/no_anim</item>
+        <item name="android:activityCloseEnterAnimation">@anim/no_anim</item>
+        <item name="android:activityCloseExitAnimation">@anim/no_anim</item>
+        <item name="android:taskOpenEnterAnimation">@anim/no_anim</item>
+        <item name="android:taskOpenExitAnimation">@anim/no_anim</item>
+        <item name="android:taskCloseEnterAnimation">@anim/no_anim</item>
+        <item name="android:taskCloseExitAnimation">@anim/no_anim</item>
+        <item name="android:taskToFrontEnterAnimation">@anim/no_anim</item>
+        <item name="android:taskToFrontExitAnimation">@anim/no_anim</item>
+        <item name="android:taskToBackEnterAnimation">@anim/no_anim</item>
+        <item name="android:taskToBackExitAnimation">@anim/no_anim</item>
+    </style>
+</resources>

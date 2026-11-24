@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Нулевая анимация: используется для переходов между задачами вкладок. -->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <alpha
+        android:fromAlpha="1.0"
+        android:toAlpha="1.0"
+        android:duration="0" />
+</set>

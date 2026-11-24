@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Передний слой адаптивной иконки: веер картофеля фри и стаканчик. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Блики -->
+    <path
+        android:fillAlpha="0.85"
+        android:fillColor="#FFF8E1"
+        android:pathData="M82,26 L83.3,28.7 L86,30 L83.3,31.3 L82,34 L80.7,31.3 L78,30 L80.7,28.7 Z" />
+    <path
+        android:fillAlpha="0.7"
+        android:fillColor="#FFF8E1"
+        android:pathData="M25,40 L26,42 L28,43 L26,44 L25,46 L24,44 L22,43 L24,42 Z" />
+
+    <!-- Фри: внешние полоски сначала, центральные сверху -->
+    <group android:pivotX="54" android:pivotY="58" android:rotation="-30">
+        <path
+            android:fillColor="#FFB300"
+            android:pathData="M51,58 L51,36.5 C51,33.2 52.3,31 54,31 C55.7,31 57,33.2 57,36.5 L57,58 Z" />
+        <path
+            android:pathData="M52.6,54 L52.6,37 C52.6,34.5 53.2,33 54,32.6"
+            android:strokeAlpha="0.55"
+            android:strokeColor="#FFFFFF"
+            android:strokeLineCap="round"
+            android:strokeWidth="1.1" />
+    </group>
+    <group android:pivotX="54" android:pivotY="58" android:rotation="30">
+        <path
+            android:fillColor="#FFCA28"
+            android:pathData="M51,58 L51,37.5 C51,34.2 52.3,32 54,32 C55.7,32 57,34.2 57,37.5 L57,58 Z" />
+        <path
+            android:pathData="M52.6,54 L52.6,38 C52.6,35.5 53.2,34 54,33.6"
+            android:strokeAlpha="0.55"
+            android:strokeColor="#FFFFFF"
+            android:strokeLineCap="round"
+            android:strokeWidth="1.1" />
+    </group>
+    <group android:pivotX="54" android:pivotY="58" android:rotation="-18">
+        <path
+            android:fillColor="#FFD54F"
+            android:pathData="M51,58 L51,32.5 C51,29.2 52.3,27 54,27 C55.7,27 57,29.2 57,32.5 L57,58 Z" />
+        <path
+            android:pathData="M52.6,54 L52.6,33 C52.6,30.5 53.2,29 54,28.6"
+            android:strokeAlpha="0.55"
+            android:strokeColor="#FFFFFF"
+            android:strokeLineCap="round"
+            android:strokeWidth="1.1" />
+    </group>
+    <group android:pivotX="54" android:pivotY="58" android:rotation="18">
+        <path
+            android:fillColor="#FFB300"
+            android:pathData="M51,58 L51,33 C51,29.7 52.3,27.5 54,27.5 C55.7,27.5 57,29.7 57,33 L57,58 Z" />
+        <path
+            android:pathData="M52.6,54 L52.6,33.5 C52.6,31 53.2,29.5 54,29.1"
+            android:strokeAlpha="0.55"
+            android:strokeColor="#FFFFFF"
+            android:strokeLineCap="round"
+            android:strokeWidth="1.1" />
+    </group>
+    <group android:pivotX="54" android:pivotY="58" android:rotation="-6">
+        <path
+            android:fillColor="#FFA000"
+            android:pathData="M51,58 L51,29 C51,25.7 52.3,23.5 54,23.5 C55.7,23.5 57,25.7 57,29 L57,58 Z" />
+        <path
+            android:pathData="M52.6,54 L52.6,29.5 C52.6,27 53.2,25.5 54,25.1"
+            android:strokeAlpha="0.55"
+            android:strokeColor="#FFFFFF"
+            android:strokeLineCap="round"
+            android:strokeWidth="1.1" />
+    </group>
+    <group android:pivotX="54" android:pivotY="58" android:rotation="6">
+        <path
+            android:fillColor="#FFE082"
+            android:pathData="M51,58 L51,30 C51,26.7 52.3,24.5 54,24.5 C55.7,24.5 57,26.7 57,30 L57,58 Z" />
+        <path
+            android:pathData="M52.6,54 L52.6,30.5 C52.6,28 53.2,26.5 54,26.1"
+            android:strokeAlpha="0.55"
+            android:strokeColor="#FFFFFF"
+            android:strokeLineCap="round"
+            android:strokeWidth="1.1" />
+    </group>
+
+    <!-- Стаканчик -->
+    <path
+        android:fillColor="#B71C1C"
+        android:pathData="M36,53 L72,53 L68,80 Q67.6,83 64.5,83 L43.5,83 Q40.4,83 40,80 Z" />
+    <path android:pathData="M39.5,56 L68.5,56 L64.8,78 Q64.4,80.5 62,80.5 L46,80.5 Q43.6,80.5 43.2,78 Z">
+        <gradient
+            android:angle="90"
+            android:endColor="#C62828"
+            android:startColor="#FF5252" />
+    </path>
+    <path
+        android:fillAlpha="0.28"
+        android:fillColor="#FF8A80"
+        android:pathData="M39.5,56 L44.5,56 L47,80.5 L43.2,78 Q43.6,80.5 46,80.5 Z" />
+    <path
+        android:fillColor="#FFF8E1"
+        android:pathData="M37.5,56 Q37.5,51.5 42,51.5 L66,51.5 Q70.5,51.5 70.5,56 L70.5,59 L37.5,59 Z" />
+    <path
+        android:pathData="M38,58.4 L70,58.4"
+        android:strokeAlpha="0.25"
+        android:strokeColor="#E65100"
+        android:strokeWidth="0.9" />
+
+    <!--Личико картошки-->
+    <path
+        android:fillColor="#5D1608"
+        android:pathData="M47.2,65.5 A2.1,2.1 0 1,1 51.4,65.5 A2.1,2.1 0 1,1 47.2,65.5 Z" />
+    <path
+        android:fillColor="#5D1608"
+        android:pathData="M57.2,65.5 A2.1,2.1 0 1,1 61.4,65.5 A2.1,2.1 0 1,1 57.2,65.5 Z" />
+    <path
+        android:pathData="M49.5,71 Q54,75.5 58.5,71"
+        android:strokeColor="#5D1608"
+        android:strokeLineCap="round"
+        android:strokeWidth="2" />
+</vector>

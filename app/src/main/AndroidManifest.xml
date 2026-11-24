@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Geolocation: сайт запрашивает её через WebView, приложение координаты не хранит. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="false"
+        android:theme="@style/Theme.Foodkomfort"
+        android:usesCleartextTraffic="false">
+
+        <!-- Роутер: выбирает последнюю активную вкладку и сразу передаёт управление. -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Каталог и «Своя ссылка». -->
+        <activity
+            android:name=".CatalogActivity"
+            android:exported="false"
+            android:launchMode="singleTask" />
+
+        <!-- Все вкладки в одном процессе: WebView кэшируются в памяти, смена task не нужна. -->
+        <activity
+            android:name=".TabActivity"
+            android:exported="false"
+            android:launchMode="singleTask" />
+
+        <!-- Единственный владелец реестра вкладок. -->
+        <provider
+            android:name=".RegistryProvider"
+            android:authorities="${applicationId}.registry"
+            android:exported="false" />
+    </application>
+
+</manifest>
