@@ -36,5 +36,3 @@ Release подписан debug-ключом, ставится так же. AGP 9
 - `gh-pages` — сайт в корне для GitHub Pages, без Gradle и исходников. APK лежит в `downloads/foodkortniza.apk`.
 
 Обновление сайта: собрать `:app:assembleRelease` на `main`, переключиться на `gh-pages`, заменить APK в `downloads/`, закоммитить и запушить.
-
-Подробный исходный план — в [`PLAN.md`](PLAN.md).
