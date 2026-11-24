@@ -1,0 +1,8 @@
+# Ветка gh-pages: здесь только статические файлы сайта.
+.gradle/
+.kotlin/
+build/
+app/
+local.properties
+*.apk
+!downloads/foodkortniza.apk
