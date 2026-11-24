@@ -28,7 +28,7 @@ Release подписан debug-ключом, ставится так же. AGP 9
 
 Новый магазин — одна запись в `stores.json` (id, title, entryUrl, allowedHosts, emoji, categoryId, priority), без правок кода. Файл копируется в `app/src/main/assets/stores.json` как fallback.
 
-Приложение раз в 6 часов тянет каталог по HTTPS из `BuildConfig.STORES_URL`, кэширует его и при ошибке падает обратно на встроенный JSON. Пользовательские вкладки не затрагиваются.
+Приложение раз в 6 часов тянет каталог по HTTPS с `https://foodkortniza.potatom.net/stores.json` (`BuildConfig.STORES_URL`), кэширует его и при ошибке падает обратно на встроенный JSON. Пользовательские вкладки не затрагиваются. Публичная копия лежит в корне ветки `gh-pages` — при изменении каталога обновляйте оба файла.
 
 ## Ветки
 
