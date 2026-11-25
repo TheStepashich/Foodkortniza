@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Светлый фон интерфейса: системные иконки должны быть тёмными. -->
+    <bool name="system_bars_light">true</bool>
+</resources>
