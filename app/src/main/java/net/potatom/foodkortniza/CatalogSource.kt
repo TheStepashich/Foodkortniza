@@ -16,45 +16,66 @@ object CatalogSource {
     private const val CACHE_FILE = "stores_remote.json"
     private const val MAX_CACHE_AGE_MS = 6L * 60 * 60 * 1000
     private const val TIMEOUT_MS = 6000
+    // Первый запуск: реестр вкладок создаётся до MainActivity, поэтому ждём ответа
+    // синхронно, но недолго, чтобы не тормозить старт без сети.
+    private const val FIRST_RUN_TIMEOUT_MS = 2500
 
     /** Синхронно: свежий кэш → встроенный каталог. */
-    fun load(context: Context): String {
-        val cache = File(context.filesDir, CACHE_FILE)
-        if (cache.exists() && System.currentTimeMillis() - cache.lastModified() <= MAX_CACHE_AGE_MS) {
-            val text = runCatching { cache.readText() }.getOrNull()
-            if (text != null && isValid(text)) return text
+    fun load(context: Context): String = freshCache(context) ?: bundled(context)
+
+    /**
+     * Каталог для первых вкладок. На чистой установке кэша ещё нет, а реестр создаётся
+     * раньше MainActivity — поэтому здесь один раз качаем каталог синхронно.
+     * Иначе дефолтные вкладки берутся из устаревшего assets/stores.json.
+     */
+    fun loadForDefaults(context: Context): String {
+        freshCache(context)?.let { return it }
+        val downloaded = runCatching { download(FIRST_RUN_TIMEOUT_MS) }.getOrNull()
+        if (downloaded != null && isValid(downloaded)) {
+            saveCache(context, downloaded)
+            return downloaded
         }
-        return context.assets.open("stores.json").bufferedReader().use { it.readText() }
+        return bundled(context)
     }
 
     /** Асинхронно обновляет кэш; onUpdated получает true, если каталог реально обновился. */
     fun refresh(context: Context, onUpdated: (Boolean) -> Unit = {}) {
         Thread {
             val updated = runCatching { download() }.getOrNull()?.let { text ->
-                if (isValid(text)) {
-                    runCatching {
-                        val cache = File(context.filesDir, CACHE_FILE)
-                        val temp = File(context.filesDir, "$CACHE_FILE.tmp")
-                        temp.writeText(text)
-                        if (cache.exists()) cache.delete()
-                        temp.renameTo(cache)
-                    }.isSuccess
-                } else {
-                    false
-                }
+                if (isValid(text)) saveCache(context, text) else false
             } ?: false
 
             Handler(Looper.getMainLooper()).post { onUpdated(updated) }
         }.start()
     }
 
-    private fun download(): String {
+    private fun freshCache(context: Context): String? {
+        val cache = File(context.filesDir, CACHE_FILE)
+        if (!cache.exists() || System.currentTimeMillis() - cache.lastModified() > MAX_CACHE_AGE_MS) {
+            return null
+        }
+        val text = runCatching { cache.readText() }.getOrNull() ?: return null
+        return text.takeIf { isValid(it) }
+    }
+
+    private fun bundled(context: Context): String =
+        context.assets.open("stores.json").bufferedReader().use { it.readText() }
+
+    private fun saveCache(context: Context, text: String): Boolean = runCatching {
+        val cache = File(context.filesDir, CACHE_FILE)
+        val temp = File(context.filesDir, "$CACHE_FILE.tmp")
+        temp.writeText(text)
+        if (cache.exists()) cache.delete()
+        temp.renameTo(cache)
+    }.isSuccess
+
+    private fun download(timeoutMs: Int = TIMEOUT_MS): String {
         val url = URL(BuildConfig.STORES_URL)
         require(url.protocol == "https") { "Поддерживается только https" }
         val connection = url.openConnection() as HttpURLConnection
         try {
-            connection.connectTimeout = TIMEOUT_MS
-            connection.readTimeout = TIMEOUT_MS
+            connection.connectTimeout = timeoutMs
+            connection.readTimeout = timeoutMs
             connection.instanceFollowRedirects = true
             if (connection.responseCode != HttpURLConnection.HTTP_OK) {
                 error("HTTP ${connection.responseCode}")

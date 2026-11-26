@@ -33,7 +33,9 @@ class TabRegistry(private val context: Context) {
     }
 
     private fun seedDefaults() {
-        val catalog = CatalogRepository(context).catalog
+        // На чистой установке кэша ещё нет: берём каталог с сайта, чтобы новые
+        // defaultIds сразу появлялись в нижнем меню, а не только в «+».
+        val catalog = CatalogRepository(context, CatalogSource.loadForDefaults(context)).catalog
         catalog.defaultIds.mapNotNull { id -> catalog.stores.firstOrNull { it.id == id } }
             .forEachIndexed { index, store ->
                 state.tabs.add(tabFromStore(store, isDefault = true, order = index))

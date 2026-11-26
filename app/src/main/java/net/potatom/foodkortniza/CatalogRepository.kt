@@ -4,11 +4,11 @@ import android.content.Context
 import org.json.JSONArray
 import org.json.JSONObject
 
-class CatalogRepository(context: Context) {
+class CatalogRepository(context: Context, raw: String? = null) {
     val catalog: Catalog
 
     init {
-        val root = JSONObject(CatalogSource.load(context))
+        val root = JSONObject(raw ?: CatalogSource.load(context))
 
         val categories = mutableListOf<Category>()
         root.optJSONArray("categories")?.let { arr ->
